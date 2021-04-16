@@ -1,0 +1,59 @@
+
+<app-header></app-header>
+<div class="container">
+     <mat-card class="example-card"
+     >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Registro de clientes</mat-card-title>
+        </mat-card-header>
+       <mat-card-content>
+        <div>
+        <table class="mat-elevation-z8" style="width: 300px;">
+          <thead>        
+          
+             <tr>
+              <div  style="font-size: 15px;">
+                <label><b>Nombre</b></label>                   
+                <input  type="text" id="Nit"  [(ngModel)]="dataUser.name"  class="form-control"  
+                      mdbInput mdbValidate>
+              </div>
+              <div  style="font-size:15px;">
+                <label><b>Apellido</b></label>                   
+                <input   type="text" id="nombreCliente"  [(ngModel)]="dataUser.lastName" class="form-control"  
+                      mdbInput mdbValidate>
+              </div>
+
+             </tr>
+
+            <tr>
+                <td style="width: 10%;">
+                  <button type="submit"  mdbBtn color="primary"  size="sm" (click)="createUser()" mdbWavesEffect>Enviar
+                  </button>
+                </td>
+            </tr>
+         
+          </thead>
+          <tbody>
+          
+          </tbody>
+        </table>
+        <table>
+          <tr>
+            <td style="width: 10%;">
+              <button type="submit"  mdbBtn color="warning"  size="sm" (click)="getListUsers()" mdbWavesEffect>Consultar Listado de clientes
+              </button>
+            </td>
+        </tr>
+
+        </table>
+      </div>
+      </mat-card-content>
+      
+    </mat-card> 
+</div>
+
+
+<div *ngIf="loading" class="progress">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>

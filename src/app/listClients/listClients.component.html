@@ -1,0 +1,59 @@
+<app-header></app-header>
+<div class="container">
+     <mat-card class="example-card"
+     >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Consulta de registros</mat-card-title>
+        </mat-card-header>
+       <mat-card-content>
+        <div>
+
+          <table class="mat-elevation-z8 "  style="background-color: azure;width: 500px">
+            <thead>     
+              <tr>
+                <td> <b> ID</b></td>
+                <td><b>Name</b></td>
+                <td><b>Last Name</b></td>
+                <td><b>State process</b></td>
+                <td><b>Current state</b></td>
+
+            </tr>   
+              <tr *ngFor="let row of  listUsers">
+                  <td>{{row.id}}</td>
+                  <td>{{row.name}}</td>
+                  <td>{{row.lastName}}</td>
+                  <td> <input type="checkbox" (change)="row.process = !row.process" [checked]="row.process"></td>
+                  <td>{{row.state}}</td>                   
+              </tr>
+              <tr>
+                <td style="width: 10%;">
+                  <button type="submit"  mdbBtn color="primary"  size="sm"  (click)="getDataForms(listUsers)" mdbWavesEffect>Procesar
+                  </button>
+                </td>
+            </tr>  
+             
+            </thead>
+            <tbody>
+            
+            </tbody>
+          </table>
+      
+        <table >
+          <thead>        
+            
+            <tr>
+                <td style="width: 10%;">
+                  <button type="submit"  mdbBtn color="success"  size="sm" (click)="return()" mdbWavesEffect>regresar
+                  </button>
+                </td>
+            </tr>         
+          </thead>
+          <tbody>          
+          </tbody>
+        </table>
+      </div>
+      </mat-card-content>
+      
+    </mat-card> 
+</div>
